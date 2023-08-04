@@ -9,7 +9,10 @@ ARP spoofing, ARP cache poisoning, or ARP poison routing is a technique by which
 
 [arp_spoofing]: https://upload.wikimedia.org/wikipedia/commons/3/33/ARP_Spoofing.svg
 
+---
+
 ## Detecting ARP Spoofing attack
+
 > To see more about how to detect ARP Spoofing Go see ["Network Security Hack" by Andrew Lochart](https://edu.anarcho-copy.org/GNU%20Linux%20-%20Unix-Like/network-security-hacks.pdf) 
 
 One program that can help accomplish this is [Arpwatch](ftp://ftp.ee.lbl.gov/arpwatch.tar.gz). It works by monitoring an interface in promiscuous mode
