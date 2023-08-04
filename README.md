@@ -42,7 +42,7 @@ After downloading Arpwatch, you can compile and install it in the usual manner b
 ```
 
 When running Arpwatch on a machine with multiple interfaces, you'll probably want to specify
-the interface on the command line. This can be done by using the ```-i``` command-line option:
+the interface on the command line. This can be done by using the `-i` command-line option:
 
 ```sh
 arpwatch -i iface
@@ -68,7 +68,7 @@ Nov 1 01:03:25 zul arpwatch: flip flop 192.168.0.65 0:e0:81:3:d8:8e (0:50:ba:85:
 In this case, the initial entry is from the first fraudulent ARP response that was received, and the
 subsequent two are from a race condition between the fraudulent and authentic responses.
 To make it easier to deal with multiple Arpwatch installs on a switched environment, you can
-send the log messages to a central ```syslogd```, aggregating all the output into one
+send the log messages to a central `syslogd`, aggregating all the output into one
 place. However, due to the fact that your machines can be manipulated by the same attacks that
-Arpwatch is looking for, it would be wise to use static ARP table entries [Hack #32] on your
+Arpwatch is looking for, it would be wise to use static ARP table entries on your
 syslog server, as well as all the hosts running Arpwatch.
