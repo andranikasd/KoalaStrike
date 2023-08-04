@@ -1,6 +1,8 @@
 # KoalaStrike 
 > ARP spoofing tool implemented in c programming language 
 
+---
+
 ## Content
 - [What is ARP spoofing?](#what-is-arp-spoofing)
 - [Detecting ARP spoofing attack](#detecting-arp-spoofing-attack)
