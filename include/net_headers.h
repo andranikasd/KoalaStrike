@@ -2,8 +2,6 @@
 #define NET_HEADERS_H
 
 
-#include <cstdint>
-#include <stdint.h>
 #include <stdint.h>
 
 #define ARP_REQUEST     1
