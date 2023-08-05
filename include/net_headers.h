@@ -2,6 +2,7 @@
 #define NET_HEADERS_H
 
 
+#include <cstdint>
 #include <stdint.h>
 #include <stdint.h>
 
@@ -28,5 +29,20 @@ typedef struct {
   uint8_t   target_ip_addr[IP_LENGTH];
 }arp_header;
 
+arp_header* arp_packet
+(
+  const uint16_t opcode,
+  const uint8_t* src_mac_addr, 
+  const char* spoofed_ip_source, 
+  const uint8_t* dest_mac_addr, 
+  const char* dest_ip
+);
+
+ether_header* eth_packet
+(
+  const uint8_t* dest_mac_addr,
+  const uint8_t* src_mac_addr,
+  const arp_header* arp_peyload
+);
 
 #endif
