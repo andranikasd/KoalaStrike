@@ -2,3 +2,4 @@
 *.obj
 *.ignore
 *.gch
+.vscode/

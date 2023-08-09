@@ -11,7 +11,6 @@ RM 		= rm -f
 CC		= gcc
 
 CFLAGS  = -Wall -Wextra -Werror
-CFLAGS += -pedantic
 CFLAGS += -I./include
 
 all: $(NAME)
