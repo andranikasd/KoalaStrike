@@ -1,9 +1,4 @@
 #include "../include/network.h"
-#include "../include/logging.h"
-#include <stdlib.h>
-#include <string.h>
-
-
 
 arp_header* create_arp_package(uint16_t opcode, uint8_t* src_hardw_addr, uint8_t* src_protocol_addr,
                                uint8_t* dst_hardw_addr, uint8_t* dst_protocol_addr) 
@@ -54,3 +49,22 @@ ethernet_header* create_ether_package(uint8_t* dst_host, uint8_t* src_host, uint
 
     return (eth_header);
 }
+
+const unsigned char* retrieve_mac_from_iface(const char* iface_name) {
+    struct ifreq interface;
+
+    strcpy(interface.ifr_name, iface_name);
+
+    int descriptor = socket(AF_UNIX, SOCK_DGRAM, 0);
+    if (descriptor == -1) {
+        printf("[ERROR]: strerror(errno)");
+        return -1;
+    }
+
+    if (ioctl(descriptor, SIOCGIFHWADDR, &interface) == -1) { 
+        printf("[ERROR]: strerror(errno)");
+        return -1;
+    }
+    const unsigned char* mac_address = (unsigned char *)interface.ifr_hwaddr.sa_data;
+    return mac_address;
+} 

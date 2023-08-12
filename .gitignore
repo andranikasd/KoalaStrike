@@ -3,3 +3,4 @@
 *.ignore
 *.gch
 .vscode/
+test.*

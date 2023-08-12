@@ -1,7 +1,6 @@
 // #define ERROR 1
 #include "../include/logging.h"
 
-
 void print_ethernet_header(const ethernet_header *eth_hdr) {
     printf("Ethernet Header:\n");
     printf("  Destination Host: %02X:%02X:%02X:%02X:%02X:%02X\n",
@@ -34,4 +33,16 @@ void print_arp_header(const arp_header *arp_hdr) {
     printf("  Destination Protocol Address: %u.%u.%u.%u\n",
            arp_hdr->dst_protocol_addr[0], arp_hdr->dst_protocol_addr[1],
            arp_hdr->dst_protocol_addr[2], arp_hdr->dst_protocol_addr[3]);
+}
+
+void print_mac_address(const unsigned char* mac_address) {
+    printf(
+       "MAC address is: %.2x:%.2x:%.2x:%.2x:%.2x:%.2x\n",
+       mac_address[0],
+       mac_address[1],
+       mac_address[2],
+       mac_address[3], 
+       mac_address[4],
+       mac_address[5]
+    );
 }

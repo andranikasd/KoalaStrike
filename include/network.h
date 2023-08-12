@@ -18,7 +18,7 @@
 #include <stdint.h>
 #include <arpa/inet.h>
 
-#define ETH_P_ARP       0x0806  // Addres resoulution packet
+#define ETH_P_ARP             0x0806  // Addres resoulution packet
 
 #define ETH_HEADER_LENGTH     14
 #define ARP_HEADER_LENGTH     28
