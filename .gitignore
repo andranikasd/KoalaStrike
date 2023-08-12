@@ -2,5 +2,7 @@
 *.obj
 *.ignore
 *.gch
-.vscode/
+.vscode
+.idea/*
+.vscode/*
 test.*

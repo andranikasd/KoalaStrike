@@ -1,5 +1,5 @@
 # KoalaStrike 
-> ARP spoofing tool implemented in c programming language 
+> ARP spoofing tool implemented in c programming language its something like Ettercap i guese but without user iface. Tool is using its own generated network headers for arp resopnses and requests. It also uses its own ethernet header for package sending.
 
 ---
 

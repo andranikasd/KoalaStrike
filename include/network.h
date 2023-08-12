@@ -1,5 +1,3 @@
-
-
 // Hardware type − Ethernet (0x0001)
 // Protocol type − IPv4 (0x0800)
 // Hardware address length − 6 bytes
@@ -9,7 +7,7 @@
 // Sender protocol address − 192.168.1.200 (the IP address of a legitimate device on the network)
 // Target hardware address − 00:11:22:33:44:55 (the sender's MAC address)
 // Target protocol address − 192.168.1.100 (the sender's IP address)
-
+#include "headers.h"
 
 
 #ifndef NETWORK_H
@@ -56,5 +54,6 @@ typedef struct __attribute__ ((__packed__)) {
 
 arp_header* create_arp_package(uint16_t opcode, uint8_t* src_hardw_addr, uint8_t* src_protocol_addr, uint8_t* dst_hardw_addr, uint8_t* dst_protocol_addr); 
 ethernet_header* create_ether_package(uint8_t* dst_host, uint8_t* src_host, uint16_t ethernet_type, arp_header* arp_peyload);
+const unsigned char* retrieve_mac_from_iface(const char* iface_name);
 
 #endif
