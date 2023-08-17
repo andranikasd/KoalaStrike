@@ -10,20 +10,21 @@ arp_header* create_arp_package(uint16_t opcode, uint8_t* src_hardw_addr, uint8_t
     if(!(arp_packet = malloc(sizeof(arp_header))))
         return NULL;
 
-    // Initializing statical values 
+    // Initializing statical values
     arp_packet->hardware_type = htons(HARDWARE_TYPE_ETHER);
     arp_packet->protocol_type = htons(PROTOCOL_TYPE_IPv4);
     arp_packet->hardware_length = HARDWARE_LENGTH;
     arp_packet->protocol_length = PROTOCOL_LENGTH;
     arp_packet->operation_code = htons(opcode);
-    
-    // Initializing dynamic fetched values 
+
+    // Initializing dynamic fetched values
     memcpy(&arp_packet->src_hardware_addr, src_hardw_addr, sizeof(uint8_t) * HARDWARE_LENGTH);
     memcpy(&arp_packet->dst_hardware_addr, dst_hardw_addr, sizeof(uint8_t) * HARDWARE_LENGTH);
 
-    if(inet_pton(AF_INET, src_protocol_addr, arp_packet->src_protocol_addr) != 1 ||
-     inet_pron(AF_INET, dst_protocol_addr, arp_packet->dst_protocol_addr) != 1)
+    if (inet_pton(AF_INET, src_protocol_addr, arp_packet->src_protocol_addr) != 1 ||
+        inet_pron(AF_INET, dst_protocol_addr, arp_packet->dst_protocol_addr) != 1) {
         return NULL;
+    }
 
     return (arp_packet);
 }
@@ -44,7 +45,7 @@ ethernet_header* create_ether_package(uint8_t* dst_host, uint8_t* src_host, uint
 
     memcpy(&eth_header->ethernet_type, (uint8_t[2]){arp_ident_first_byte, arp_idnet_second_byte}, sizeof(uint8_t) * 2);
 
-    // Filling peyload of arp and eht header continuesly in heap 
+    // Filling payload of arp and eht header continue in heap
     memcpy((uint8_t* )eth_header + ETH_HEADER_LENGTH, arp_peyload, sizeof(uint8_t) * ARP_HEADER_LENGTH);
 
     return (eth_header);

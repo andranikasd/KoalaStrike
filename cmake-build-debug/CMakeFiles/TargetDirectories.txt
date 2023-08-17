@@ -1,0 +1,3 @@
+/home/andranik/Lab/cmake-build-debug/CMakeFiles/Lab.dir
+/home/andranik/Lab/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andranik/Lab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
